@@ -23,21 +23,18 @@ function App() {
     }
     setCanCoins(
       coins.reduce((prevs, cur) => {
-      if (money >= (cur.quotes.USD.price * 1198.03000)) {
-        const canGetCount = Math.floor(money / Math.floor(cur.quotes.USD.price * 1198.03000));
-        prevs = {
-          ...prevs,
-          [cur.name]: {
-            price: Math.floor(cur.quotes.USD.price * 1198.03000),
-            count: canGetCount
-          }
-        }
+      if (money >= (cur.quotes.USD.price * 1197)) {
+        const canGetCount = Math.floor(money / (cur.quotes.USD.price * 1197));
+        prevs.push({
+          name: cur.name,
+          price: (cur.quotes.USD.price * 1197.44000).toFixed(6),
+          count: canGetCount
+        })
         setTotal((prev) => prev + canGetCount);
       }
       return prevs
     }, []));
   }
-  console.log(total);
   return (
     <div>
       <h1>The Coins! {loading ? "" : `(${coins.length})`}</h1>
@@ -58,8 +55,8 @@ function App() {
             <h3>You can get ... {total} coins!</h3>
             <h3>[What, How many] Coins You can Get?</h3>
             <ul>
-              {canCoins.map((coin) => (
-                <li>{coin}</li>
+              {canCoins.map((coin, index) => (
+                <li key={index}>you can get [<strong>{coin.name}, {coin.count}</strong>] ({coin.price}WON)</li>
               ))}
             </ul>
           </div>
