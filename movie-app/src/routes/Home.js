@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Loading from "../components/Loading";
 import Movie from "../components/Movie";
 
 function Home() {
@@ -17,9 +18,9 @@ function Home() {
     getMovies();
   }, []);
   return (
-    <div>
-      {loading ? (
-        <h1>Loading ...</h1>
+    <div style={{height: "100%"}}>
+      {/* {loading ? (
+        <Loading />
       ) : ( 
         <div>
           {movies.map((movie) => (
@@ -33,7 +34,8 @@ function Home() {
             />
           ))}
         </div>
-      )}
+      )} */}
+      <Loading />
     </div>
   );
 }
