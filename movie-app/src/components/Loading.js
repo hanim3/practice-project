@@ -1,4 +1,4 @@
-import style from "../styles/Loading.module.css";
+import style from "../styles/Movie.module.css";
 
 function Loading() {
   return (

@@ -1,0 +1,112 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+/* Loading */
+.container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  opacity: 0.8;
+}
+
+.container h1 {
+  color: white;
+  animation: blinker 2s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Home */
+.homeContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20%, auto));
+  gap: 30px;
+  margin: 30px;
+}
+
+/* Movie */
+.movieContainer {
+  position: relative;
+  background-size: cover;
+}
+
+.movieContainer img {
+  width: 100%;
+}
+
+.movieContainer:hover .movieAtr {
+  visibility: visible;
+}
+
+.movieContainer:hover .imgCover {
+  position: absolute;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+
+.movieAtr {
+  position: absolute;
+  top: 20px;
+  padding: 20px;
+  color: rgb(122, 122, 122);
+  visibility: hidden;
+  z-index: 1000;
+}
+
+.movieAtr h2 {
+  text-align: center;
+}
+
+.movieAtr .movieTitle {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.movieAtr p {
+  word-break: break-all;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-height: 20px; 
+  max-height: 120px;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  font-size: 17px;
+}
+
+/* Detail */
+.detailContainer {
+  margin-top: 30px;
+  text-align: center;
+  position: relative;
+}
+
+.detailContainer .movieImg {
+  margin: 10px;
+  border-radius: 20px;
+}
+
+.detailContainer .backIcon {
+  position: absolute;
+  left: 20px;
+}
+
+.detailContainer span {
+  font-size: 40px;
+  font-weight: bold;
+}
