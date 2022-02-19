@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { FaStar, FaChevronLeft } from "react-icons/fa"
 import style from "../styles/Movie.module.css";
+import Loading from "../components/Loading";
 
 function Detail() {
   const [loading, setLoading] = useState(true);
@@ -21,7 +22,7 @@ function Detail() {
   }, []);
   return (
     loading ? (
-      <h1>Loading ...</h1>
+      <Loading />
     ) : (
       <div className={style.detailContainer}>
         <div className={style.headerContainer}>
