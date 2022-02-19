@@ -20,15 +20,14 @@ function Detail() {
   useEffect(() => {
     getMovie();
   }, []);
-  console.log(movie);
   return (
     loading ? (
       <Loading />
     ) : (
       <div>
         <div className={style.detailContainer}>
-          <div className={style.headerContainer}>
-            <Link to={'/movie'} style={{color: 'black'}}><FaChevronLeft className={style.backIcon} /></Link>
+          <div>
+            <Link to={'/'} style={{color: 'black'}}><FaChevronLeft className={style.backIcon} /></Link>
             <h1>{movie.title_long}</h1>
           </div>
           <img src={movie.medium_cover_image} alt={movie.title} className={style.movieImg} />
