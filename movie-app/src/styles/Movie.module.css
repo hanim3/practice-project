@@ -79,13 +79,6 @@ body {
 
 .movieAtr p {
   word-break: break-all;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  line-height: 20px; 
-  max-height: 120px;
-  -webkit-line-clamp: 6;
-  -webkit-box-orient: vertical;
   font-size: 17px;
 }
 
@@ -109,4 +102,12 @@ body {
 .detailContainer span {
   font-size: 40px;
   font-weight: bold;
+}
+
+.back {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  opacity: 0.3;
+  width: 100%;
 }
